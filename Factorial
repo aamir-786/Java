@@ -1,0 +1,19 @@
+// Factorial Program 
+import java.util.Scanner;
+public class FActorial{
+
+    public static void main(String[] amir) {
+ 
+       System.out.print("Enter the Number : ");
+       Scanner input= new Scanner(System.in);
+        int num = input.nextInt();
+        int factorial = 1;
+        for(int i = 1; i <= num; ++i)
+        {
+            // factorial = factorial * i;  //This is same as below
+         
+            factorial *= i;
+        }
+        System.out.print("Factorial of " + num + " is : "+ factorial );
+    }
+}
