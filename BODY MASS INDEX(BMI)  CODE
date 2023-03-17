@@ -1,0 +1,57 @@
+
+import java.util.Scanner;
+
+public class BMI {
+    // 1 foot = 12 inches
+    // 1kg = 2.2 pounds
+    public static void main(String[] args) {
+       Scanner input =new Scanner(System.in);
+       System.out.println(" Enter your weight in pounds: ");
+        double weight = input.nextDouble();
+        if(weight <= 0){
+            System.out.println(" Enter the Valid Weight and Weight can't be less than 0(Negative)");
+            System.exit(0);
+        }
+        System.out.println(" Enter your height in inches: ");
+        double height = input.nextDouble();
+        if(height < 0){
+            System.out.println(" Enter the Valid Height because it can't be less than 0(Negative) ");
+            System.exit(0);  }
+      System.out.println(" Your BMI is: " + calculateBMI(weight, height));
+      findStatus(calculateBMI(weight, height));
+    }
+
+    public static double calculateBMI(double weight, double height){
+        //BMI based on weight in pounds (lb) and height in inches (inch)
+       double bMi = weight/(height*height);
+
+    return bMi*703;
+    }
+    public static String findStatus(double bmi){
+      String status;
+        if(bmi < 18.5){
+             status = "Underweight";
+            System.out.println(status);
+        }
+        else if(bmi >18.5 && bmi <24.9){
+            status = "Normal Weight";
+            System.out.println(status);
+        }
+        else if(bmi >25 && bmi <29.9){
+            status = " Overweight";
+            System.out.println(status);
+        }
+        else if (bmi >30 ){
+            status = "Obese   Kindly Decrease your weight" ;
+            System.out.println(status);
+        }
+        else {
+            status = " Wrong Command";
+            System.out.println(status);
+
+        }
+        return status;
+
+    }
+
+}
